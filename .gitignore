@@ -1,0 +1,61 @@
+# Environment variables
+.env
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Logs
+*.log
+logs/
+agent_007.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Backups
+*_old.*
+*.bak
+*.backup
+
+# Sensitive data
+private_keys/
+wallets/
+secrets/
+
+# Node modules (if added later)
+node_modules/
+package-lock.json
+yarn.lock
+
+# OS
+Thumbs.db
+.DS_Store

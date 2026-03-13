@@ -1,0 +1,27 @@
+# Agent 007 - Autonomous Protocol Dependencies
+
+# Core async and utilities
+asyncio-throttle==1.0.2
+
+# Solana SDK for blockchain interaction
+solana==0.30.2
+solders==0.18.1
+
+# Environment configuration
+python-dotenv==1.0.0
+
+# HTTP client for RPC calls
+aiohttp==3.9.1
+httpx==0.25.2
+
+# Decimal precision for financial calculations
+decimal
+
+# Logging and monitoring
+python-json-logger==2.0.7
+
+# Optional: Jupiter aggregator SDK (if available)
+# jupiter-python-sdk==0.1.0
+
+# Optional: Token account utilities
+anchorpy==0.18.0

@@ -1,6 +1,63 @@
-# AGENT 007 :: Production Landing Page
+# AGENT 007 :: Autonomous Revenue Protocol
 
-A professional, production-grade landing page for the Agent 007 autonomous revenue protocol. Built with clean architecture, sophisticated animations, and modern design principles.
+The self-executing hitman with a license to burn. A professional autonomous protocol that earns creator fees, executes buybacks, and burns supply 24/7.
+
+This repository contains:
+- **Landing Page**: Professional frontend showcasing the protocol
+- **Autonomous Agent**: Python-based backend executing the protocol autonomously
+
+---
+
+## 📁 Repository Structure
+
+```
+007/
+├── web/                # Landing page website
+│   ├── index.html      # Main landing page
+│   ├── styles.css      # All styling (white theme, responsive)
+│   ├── script.js       # JavaScript (particle system, animations)
+│   └── logo.png        # Brand logo
+├── agent/              # Autonomous protocol agent
+│   ├── agent.py        # Main autonomous agent
+│   ├── config.py       # Configuration management
+│   ├── requirements.txt # Python dependencies
+│   ├── .env.example    # Environment template
+│   ├── Skills.md       # Service offerings for tokenized agent
+│   ├── PUMPFUN_INTEGRATION.md # pump.fun compliance docs
+│   └── README.md       # Technical documentation
+└── README.md           # This file
+```
+
+## 🤖 The Autonomous Agent
+
+Agent 007 is a Python-based autonomous agent that executes the protocol's core mission:
+
+**Mission Protocol:**
+1. 💰 **Monitor** - Continuously check creator fee earnings
+2. 🎯 **Target** - Identify when threshold is reached
+3. 💼 **Hire** - Execute buyback using accumulated fees
+4. 🔫 **Eliminate** - Burn acquired tokens
+5. 🔁 **Repeat** - Loop infinitely, 24/7
+
+### Key Features
+- **Autonomous Operation**: Runs continuously without human intervention
+- **Blockchain Integration**: Connects to Solana RPC for real-time data
+- **DEX Execution**: Uses Jupiter aggregator for optimal swap pricing
+- **Safety Features**: Configurable limits, slippage protection, error recovery
+- **Comprehensive Logging**: All operations tracked and verifiable
+
+### Running the Agent
+
+See [`agent/README.md`](agent/README.md) for detailed setup and configuration.
+
+Quick start:
+```bash
+cd agent
+pip install -r requirements.txt
+cp .env.example .env
+# Configure your wallet addresses in .env
+python agent.py
+```
 
 ---
 
