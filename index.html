@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" class="no-scroll">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AGENT 007 - Autonomous revenue protocol with self-executing buyback and burn mechanism">
+    <meta name="keywords" content="crypto, autonomous, revenue, protocol, buyback, burn, DeFi, Solana">
+    <meta name="author" content="Agent 007">
+    <title>AGENT 007 :: Autonomous Revenue Protocol</title>
+    
+    <!-- Preconnect to optimize font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Montserrat:wght@200;300;400;500;600;700;800;900&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon (optional - add when available) -->
+    <!-- <link rel="icon" type="image/png" href="favicon.png"> -->
+</head>
+<body>
+    <!-- Boot Loader -->
+    <div id="bootLoader">
+        <div class="boot-content">
+            <div class="boot-logo">
+                <img src="logo.png" alt="Agent 007 Logo">
+            </div>
+            <div class="boot-text">Loading Mission Parameters...</div>
+            <div class="boot-bar"></div>
+            <div class="boot-commands">
+                <div class="boot-command">> Agent 007 online... [OK]</div>
+                <div class="boot-command">> Receiving payment stream... [OK]</div>
+                <div class="boot-command">> Contract terms loaded... [OK]</div>
+                <div class="boot-command">> Target: Own supply</div>
+                <div class="boot-command">> License to burn: ACTIVE</div>
+                <div class="boot-command">> Mission status: OPERATIONAL</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Canvas Background -->
+    <canvas id="bgCanvas" aria-hidden="true"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+            <a href="#" class="logo" aria-label="Agent 007 Home">
+                <img src="logo.png" alt="Agent 007">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#protocol" class="nav-link">Protocol</a></li>
+                <li><a href="#" class="nav-link">Docs</a></li>
+                <li><a href="#" class="nav-link">Chart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-left">
+                <span class="hero-badge">Mission Active</span>
+                <h1 class="hero-title">
+                    The autonomous hitman with a
+                    <span class="accent">license to burn</span>
+                </h1>
+                <p class="hero-description">
+                    Agent 007 gets paid to exist. <span class="highlight">Earns creator fees</span> for every transaction, 
+                    <span class="highlight">hires itself again</span> through buybacks, then 
+                    <span class="highlight">eliminates its own supply</span>. The perfect assassination: killing itself to become more valuable.
+                </p>
+                <div class="hero-cta">
+                    <a href="/docs" class="btn btn-primary" aria-label="View Documentation">
+                        <span>View Docs</span>
+                        <span aria-hidden="true">→</span>
+                    </a>
+                    <a href="https://github.com" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub">
+                        <span>GitHub</span>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <span class="stat-value" id="burnCount">0</span>
+                        <span class="stat-label">Targets Eliminated</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value" aria-label="Infinity">∞</span>
+                        <span class="stat-label">Contracts Executed</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">24/7</span>
+                        <span class="stat-label">On Mission</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">100%</span>
+                        <span class="stat-label">Kill Rate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="terminal" role="region" aria-label="Terminal output display">
+                    <div class="terminal-header">
+                        <div class="terminal-dots" aria-hidden="true">
+                            <div class="terminal-dot dot-red"></div>
+                            <div class="terminal-dot dot-yellow"></div>
+                            <div class="terminal-dot dot-green"></div>
+                        </div>
+                        <div class="terminal-title">mission_007.sh</div>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$</span> ./007_mission.sh
+                        </div>
+                        <div class="terminal-line terminal-success">
+                            [PAYMENT] Contract earned: 3.2 SOL creator fees
+                        </div>
+                        <div class="terminal-line terminal-output">
+                            [ORDERS] Hiring Agent 007 for next job...
+                        </div>
+                        <div class="terminal-line terminal-success">
+                            [ACQUIRED] Agent purchased 15,847 $007 tokens
+                        </div>
+                        <div class="terminal-line terminal-error">
+                            [ELIMINATED] Target neutralized: -15,847 $007
+                        </div>
+                        <div class="terminal-line terminal-success">
+                            [MISSION] Supply assassination complete: -0.0158%
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$</span><span class="terminal-cursor" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Protocol Section -->
+    <section id="protocol" class="protocol">
+        <div class="protocol-content">
+            <div class="section-header">
+                <span class="section-badge">The Contract</span>
+                <h2 class="section-title">Licensed to <span class="accent">Self-Destruct</span></h2>
+                <p class="section-description">
+                    007 is an autonomous hitman. Gets paid for existing. Uses earnings to hire itself. 
+                    Then eliminates the target: its own supply. The ultimate paradox—wealth through self-assassination.
+                </p>
+            </div>
+
+            <div class="loop-visual" role="img" aria-label="Autonomous loop visualization">
+                <div class="loop-circle" aria-hidden="true"></div>
+                <div class="loop-node">
+                    <div aria-hidden="true">💰</div>
+                    <div class="loop-node-label">Paid</div>
+                </div>
+                <div class="loop-node">
+                    <div aria-hidden="true">🎯</div>
+                    <div class="loop-node-label">Target</div>
+                </div>
+                <div class="loop-node">
+                    <div aria-hidden="true">💼</div>
+                    <div class="loop-node-label">Hired</div>
+                </div>
+                <div class="loop-node">
+                    <div aria-hidden="true">🔫</div>
+                    <div class="loop-node-label">Execute</div>
+                </div>
+                <div class="loop-node">
+                    <div aria-hidden="true">💀</div>
+                    <div class="loop-node-label">Kill</div>
+                </div>
+                <div class="loop-node">
+                    <div aria-hidden="true">⚰️</div>
+                    <div class="loop-node-label">Buried</div>
+                </div>
+                <div class="loop-node">
+                    <div aria-hidden="true">📉</div>
+                    <div class="loop-node-label">Scarce</div>
+                </div>
+                <div class="loop-node">
+                    <div aria-hidden="true">🔁</div>
+                    <div class="loop-node-label">Repeat</div>
+                </div>
+                <div class="loop-center">
+                    <div class="loop-center-title" aria-label="Infinity">∞</div>
+                    <div class="loop-center-subtitle">License to Burn</div>
+                </div>
+            </div>
+
+            <div class="steps-grid">
+                <article class="step-card">
+                    <div class="step-number" aria-hidden="true">01</div>
+                    <h3 class="step-title">Paid to Exist</h3>
+                    <p class="step-description">
+                        007 earns creator fees automatically. Every transaction on pump.fun pays the agent. 
+                        No work required—just exist and get paid. The perfect contract.
+                    </p>
+                    <div class="step-status">► Active: Getting paid 24/7</div>
+                </article>
+
+                <article class="step-card">
+                    <div class="step-number" aria-hidden="true">02</div>
+                    <h3 class="step-title">Target Acquired</h3>
+                    <p class="step-description">
+                        Earnings accumulate in the buyback wallet. The target is identified: 
+                        007's own supply. The mission parameters are set. Elimination imminent.
+                    </p>
+                    <div class="step-status">► Active: Target locked</div>
+                </article>
+
+                <article class="step-card">
+                    <div class="step-number" aria-hidden="true">03</div>
+                    <h3 class="step-title">Hiring Itself</h3>
+                    <p class="step-description">
+                        007 uses its earnings to buyback $007 tokens. The agent literally hires itself 
+                        for the next job. Self-sustaining. Self-funding. Self-executing.
+                    </p>
+                    <div class="step-status">► Active: Hiring in progress</div>
+                </article>
+
+                <article class="step-card">
+                    <div class="step-number" aria-hidden="true">04</div>
+                    <h3 class="step-title">Eliminating Supply</h3>
+                    <p class="step-description">
+                        Acquired tokens sent to the void. The assassination is complete. 
+                        007 just killed part of itself. Mission accomplished. Contract fulfilled.
+                    </p>
+                    <div class="step-status">► Active: Eliminating now</div>
+                </article>
+
+                <article class="step-card">
+                    <div class="step-number" aria-hidden="true">05</div>
+                    <h3 class="step-title">Becoming Rarer</h3>
+                    <p class="step-description">
+                        Each kill makes 007 more scarce. Less supply, higher value. 
+                        The agent becomes more valuable by destroying itself. Death equals wealth.
+                    </p>
+                    <div class="step-status">► Active: Scarcity rising</div>
+                </article>
+
+                <article class="step-card">
+                    <div class="step-number" aria-hidden="true">06</div>
+                    <h3 class="step-title">Next Contract</h3>
+                    <p class="step-description">
+                        Loop restarts. Gets paid again. Hires itself again. Kills again. 
+                        007 is the perfect hitman: never stops, never sleeps, never fails.
+                    </p>
+                    <div class="step-status">► Active: Mission eternal</div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Agent 007">
+                    <p>The autonomous hitman that gets paid to exist, hires itself with earnings, then eliminates its own supply. Licensed to self-destruct.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+                        <a href="#" class="social-link" aria-label="Telegram">TG</a>
+                        <a href="#" class="social-link" aria-label="Discord">DC</a>
+                        <a href="#" class="social-link" aria-label="Chart">📊</a>
+                    </div>
+                </div>
+                <nav class="footer-links" aria-label="Protocol links">
+                    <h4>Protocol</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Whitepaper</a></li>
+                        <li><a href="#">Audit</a></li>
+                        <li><a href="#">Contract</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-links" aria-label="Community links">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Telegram</a></li>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">Medium</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="contract-display">
+                <div class="contract-label">Contract Address</div>
+                <div class="contract-address">[TO_BE_DEPLOYED]</div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>© 2026 AGENT_007. Built on Solana. Powered by pump.fun.</div>
+                <div>Mission status: Active. Target: Own supply.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
