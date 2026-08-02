@@ -74,55 +74,6 @@ class HeaderScroll {
     }
 }
 
-class ContractBanner {
-    constructor() {
-        this.button = document.querySelector('.contract-banner-copy');
-        this.init();
-    }
-
-    init() {
-        if (!this.button) return;
-        this.button.addEventListener('click', () => this.copy());
-    }
-
-    async copy() {
-        const text = this.button.dataset.contract || this.button.querySelector('.contract-banner-address').textContent.trim();
-        const hint = this.button.querySelector('.contract-banner-hint');
-
-        try {
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-                await navigator.clipboard.writeText(text);
-            } else {
-                const temp = document.createElement('textarea');
-                temp.value = text;
-                temp.setAttribute('readonly', '');
-                temp.style.position = 'fixed';
-                temp.style.left = '-9999px';
-                document.body.appendChild(temp);
-                temp.select();
-                document.execCommand('copy');
-                document.body.removeChild(temp);
-            }
-
-            if (hint) {
-                const originalText = hint.textContent;
-                hint.textContent = 'Copied';
-                setTimeout(() => {
-                    hint.textContent = originalText;
-                }, 1200);
-            }
-        } catch (error) {
-            if (hint) {
-                const originalText = hint.textContent;
-                hint.textContent = 'Copy failed';
-                setTimeout(() => {
-                    hint.textContent = originalText;
-                }, 1200);
-            }
-        }
-    }
-}
-
 // ============================================
 // PARTICLE SYSTEM (CANVAS BACKGROUND)
 // ============================================
@@ -362,9 +313,8 @@ class App {
             // Initialize all components
             new BootLoader();
             new HeaderScroll();
-            new ContractBanner();
             new ParticleSystem();
-            new CounterAnimation('burnCount', 2847491);
+            // Disabled animated counter for tokens burned — show static default 0
             new SmoothScroll();
 
             console.log('✅ Agent 007 initialized successfully');
