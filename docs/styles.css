@@ -277,9 +277,64 @@ body::after {
 /* ============================================
    HEADER / NAV - 007 ELEGANCE
    ============================================ */
-.header {
+.top-contract-banner {
     position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
+    height: 24px;
+    z-index: 120;
+    background: rgba(0, 0, 0, 0.94);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.contract-banner-copy {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: 100%;
+    border: 0;
+    background: transparent;
+    color: var(--champagne);
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.contract-banner-copy:hover,
+.contract-banner-copy:focus-visible {
+    color: var(--gold-light);
+    outline: none;
+}
+
+.contract-banner-label {
+    color: var(--gold-light);
+}
+
+.contract-banner-address {
+    color: var(--white);
+    max-width: min(45vw, 320px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.contract-banner-hint {
+    color: rgba(247, 231, 206, 0.8);
+    font-size: 0.6rem;
+}
+
+.header {
+    position: fixed;
+    top: 24px;
     left: 0;
     width: 100%;
     z-index: 100;
